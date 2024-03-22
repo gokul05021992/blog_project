@@ -1,0 +1,16 @@
+python version - 3.18.10
+django version - 4.2.11.
+
+
+create virtualenvironment using virtualenv venv and activate it
+go inside the source /venv/bin/activate for mac and linux or /venv/bin/scripts/activate for windows
+give the database name and password in settings.py
+install dependencies using pip install -r requirement.txt
+do the migration using 
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+    
+    
+    
+ I was deployed in my own aws server http://13.127.159.229:8000/

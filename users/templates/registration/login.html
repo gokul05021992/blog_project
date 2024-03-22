@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<div class="login-page">
+    <div class="login-form">
+        <h3>Login</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .login-page {
+        background-image: url('images/balloons.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        overflow: hidden; /* Hide overflowing balloons */
+        position: relative;
+    }
+
+    .balloon {
+        position: absolute;
+        animation: float 6s infinite;
+    }
+
+    .balloon:nth-child(2) {
+        animation-duration: 5s; /* Adjust speed for different balloons */
+    }
+
+    .balloon img {
+        width: 50px; /* Adjust balloon size */
+        height: auto;
+    }
+
+    .login-form {
+        position: relative; /* Ensure login form is above the balloons */
+        z-index: 1; /* Make sure form is on top of the balloons */
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .login-form h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-form button {
+        width: 100%;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px); /* Adjust floating height */
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Create a new Blog Post{% endblock title %}
+{% block content %}
+</br>
+{% if user.is_authenticated %}
+        <h3>Add Post...</h3><br/>
+        <div class="form-group">
+        <form method ='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-secondary">Post</button>
+        </form>
+        </div>
+    {% else %}
+
+<center><strong>You are not allowed here</strong></center>
+
+{% endif %}
+
+{% endblock %}
