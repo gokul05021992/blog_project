@@ -12,11 +12,11 @@ for item in choices:
 class postform(forms.ModelForm):
     class Meta:
         model = post
-        fields = ['title','title_tag','author','category','body','image']
+        fields = ['title','title_tag','category','body','image']
         widgets = {
             'title': forms.TextInput(attrs={'class':'form-control'}),
             'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class': 'form-control'}),
+            # 'author': forms.Select(attrs={'class': 'form-control'}),
             'category': forms.Select(choices=choicelist, attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }

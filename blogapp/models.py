@@ -17,7 +17,8 @@ class post(models.Model):
     title_tag = models.CharField(max_length=255, default='My blog')
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     body = models.TextField()
-    postdate=models.DateField(auto_now=True)
+    # postdate=models.DateField(auto_now=True)
+    postdate=models.DateTimeField(auto_now=True)
     category=models.CharField(max_length=255,default='noncategorized')
     image = models.ImageField(null=True,blank=True, upload_to="images/")
 
