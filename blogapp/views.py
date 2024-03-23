@@ -21,6 +21,7 @@ class articledetail(DetailView):
     template_name = 'articledetail.html'
 class Addpost(LoginRequiredMixin,CreateView):
     model=post
+    print('working')
     form_class = postform
     template_name = 'post.html'
 

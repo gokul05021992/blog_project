@@ -42,6 +42,13 @@
       </li>
       {% endif %}
     </ul>
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+      <span class="navbar-text ml-auto">        
+        Welcome: {{user.username }}
+        {% endif %}
+      </span>
+    </li>
   </div>
 </nav>
   <div class ="container">
