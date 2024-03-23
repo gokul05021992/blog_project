@@ -2,7 +2,7 @@
 
 {% block content %}
 </br>
-<h3>Total post</h3><br/>
+<h3>Post</h3><br/>
 <ul>
 {% for post in object_list %}
     <li><a href="{% url 'articledetail' post.pk %}">{{ post.title }}</a>
